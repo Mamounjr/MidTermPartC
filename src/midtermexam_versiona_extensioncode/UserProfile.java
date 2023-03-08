@@ -13,11 +13,13 @@ package midtermexam_versiona_extensioncode;
  * code.
  * @author dancye, 2019
  */
+
+
 public class UserProfile 
 {
-    
+    public enum Genres{Comedy,Drama,Action,Mystery};
     private String userID;//the userID
-    private String genre;// the user's preferred genre of movie
+    private Genres genre;// the user's preferred genre of movie
     private String[] genres = {"Comedy", "Drama", "Action", "Mystery"};//available genres of movies
     
     /**
@@ -25,12 +27,23 @@ public class UserProfile
      * @param givenID the ID to assign to this user
      * @param givenGenre the users favourite genre
      */
-    public UserProfile(String givenID, String givenGenre)
+    public UserProfile(Genres genres, String givenID, String givenGenre)
     {
         userID = givenID;
-        genre= givenGenre;
+        Genres genre;
+        
+        
+    }
+    
+    public UserProfile()
+    {
+        
     }
 
+      public UserProfile(Genres genres) {
+       this.genre = genre;
+    }
+        
     /**
      * A getter for the userID
      * @return the userID
@@ -50,16 +63,18 @@ public class UserProfile
      * A getter for the genre
      * @return the genre
      */
-    public String getGenre() {
-        return genre;
+    public Genres getGenre() {
+        return this.genre;
     }
 
     /**
      * @param genre the genre to set
      */
-    public void setGenre(String genre) {
+    public void setGenre(Genres genres) {
         this.genre = genre;
     }
+    
+   
     
     
     
